@@ -18,7 +18,9 @@ config(function($stateProvider, $routeProvider, USER_ROLES) {
     }
   });
 });
-angular.module('phonecatApp').controller('ApplicationController', function($scope, USER_ROLES) {
+
+// 添加一个父控制器，用于保存用户信息，并可以根据该用户权限决定页面上显示的内容 
+angular.module('phonecatApp').controller('AppParentController', function($scope, USER_ROLES) {
   $scope.currentUser = null;
   $scope.USER_ROLES = USER_ROLES;
   $scope.id = 1;
@@ -26,22 +28,3 @@ angular.module('phonecatApp').controller('ApplicationController', function($scop
     $scope.currentUser = user;
   };
 });
-
-
-// .config(['$locationProvider', '$routeProvider',
-//     function config($locationProvider, $routeProvider) {
-//         $locationProvider.hashPrefix('!');
-
-//         $routeProvider.
-//         when('/login', {
-//             template: '<login-form></login-form>'
-//         }).
-//         when('/phones', {
-//             template: '<phone-list></phone-list>'
-//         }).
-//         when('/phones/:phoneId', {
-//             template: '<phone-detail></phone-detail>'
-//         }).
-//         otherwise('/login');
-//     }
-// ])

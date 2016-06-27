@@ -25,8 +25,6 @@ angular.module('phonecatApp').controller('ApplicationController', function($scop
   $scope.setCurrentUser = function(user) {
     $scope.currentUser = user;
   };
-}).controller('childController', function($scope) {
-  $scope.ids = 2;
 });
 
 

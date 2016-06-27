@@ -2,6 +2,15 @@
 
 // ng-normal-auth module
 angular.module('ng-normal-auth', []).
+config(['$httpProvider', function($httpProvider) {
+    // 配置拦截器
+    $httpProvider.interceptors.push([
+        '$injector',
+        function($injector) {
+            return $injector.get('AuthInterceptor');
+        }
+    ]);
+}]).
 run(function($rootScope, AUTH_EVENTS, authService, Session, $window) {
 
     // 从session中获取用户数据，避免意外刷新后，Session中的数据被清空

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="phonecatApp">
+<head>
+    <meta charset="UTF-8">
+    <title>My HTML File</title>
+</head>
+<body ng-controller="ApplicationController">
+
+    <div login-form ng-if="!isLoginPage"></div>    
+    <div class="container">
+        <div ng-if="currentUser"><b>Welcome, {{ currentUser.username }}</b></div>
+        <div ui-view></div>
+    </div>
+    
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-cookie/angular-cookie.js"></script>
+    <script src="bower_components/ng-token-auth/dist/ng-token-auth.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <script src="scripts/test-app.js"></script>
+    <script src="auth/auth.module.js"></script>
+    <script src="auth/authServiceProvider.provider.js"></script>
+    <script src="auth/authEvents.constant.js"></script>
+    <script src="auth/authRoles.constant.js"></script>
+    <script src="auth/authSession.service.js"></script>
+    <script src="auth/login/login.directive.js"></script>
+    <script src="auth/login/login.controller.js"></script>
+
+
+    <!-- <script src="scripts/form/form.module.js"></script>
+    <script src="scripts/form/form.controller.js"></script>
+    <script src="scripts/form/Session.service.js"></script>
+    <script src="scripts/form/form.service.js"></script>
+    <script src="scripts/form/form.directive.js"></script> -->
+
+    <script src="scripts/phone-list/phone-list.module.js"></script>
+    <script src="scripts/phone-list/phone-list.component.js"></script>
+    <script src="scripts/phone-detail/phone-detail.module.js"></script>
+    <script src="scripts/phone-detail/phone-detail.component.js"></script>
+
+</body>
+</html>

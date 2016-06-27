@@ -11,7 +11,6 @@ angular.module('ng-normal-auth').controller('loginController', function($scope, 
                 $scope.setCurrentUser(user);
                 $state.go(authService.nextStateName);
             }
-
         });
     };
 });
